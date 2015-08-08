@@ -1,0 +1,241 @@
+/**
+ * HN 首页样式模块
+ * @author mingxin.huang
+ * @email mingxin.huang@163.com
+ * @update 2018.08.08
+ */
+
+/*公用样式*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    color: #4A89DC;
+    text-decoration: none;
+    outline: 0;
+}
+
+html, body, .container {
+    height: 100%;
+}
+
+/*修改webkit下滚动条样式*/
+html ::-webkit-scrollbar{
+    width:10px;
+    background-color:rgba(0,0,0,.05);
+}
+
+html ::-webkit-scrollbar:hover{
+    background-color:rgba(0,0,0,.09);
+}
+
+html ::-webkit-scrollbar-thumb:vertical{
+    background-color:rgba(0,0,0,.25);
+    background-clip:padding-box;
+    border:2px solid transparent;
+    min-height:10px;
+}
+
+html ::-webkit-scrollbar-thumb:vertical:active{
+    background:rgba(0,0,0,.61);
+}
+
+body {
+    font-size: 15px;
+    line-height: 1.618;
+    font-family: 'Source Sans Pro',Helvetica Neue,Segoe UI,trebuchet MS,Arial,sans-serif;
+    color: #33393F;
+}
+
+/*清除浮动*/
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.container {
+    
+}
+
+/*顶部导航栏底色*/
+.header-bg {
+    height: 45px;
+    background-color: #4A89DC;
+}
+
+/*通用顶部样式*/
+.container-header {
+    position: relative;
+}
+
+.container-header .header-menu {
+    position: absolute;
+    top: 0;
+}
+
+.container-header .header-menu li {
+    display: inline-block;
+}
+
+.container-header .header-menu-l {
+    left: 0;
+}
+
+.container-header .header-menu-r {
+    right: 0;
+}
+
+.container-header a {
+    display: inline-block;
+    text-align: center;
+}
+
+.container-header a:active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.container-header h1 {
+    font-size: 15px;
+    line-height: 45px;
+    margin: 0 50px;
+    color: #FFF;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.container-header .fa {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 22px;
+    text-align: center;
+    color: #FFF;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*stroy左侧栏区域相关样式*/
+#container-stories {
+    position: relative;
+    float: left;
+    width: 390px;
+    height: 100%;
+    margin: -45px 0 0 0;
+}
+
+/*story侧栏列表展示区域样式*/
+#stories-section {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+#stories-section ul {
+    
+}
+
+#stories-section li {
+    position:relative;
+    background-repeat:repeat-x;
+    background-position:bottom left;
+    background-image:url(data:image/png;
+        base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACAQMAAABiyG7IAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAFGxJGUUAAAAOSURBVAjXYwCB//8/AAAF8wLvjRmqyAAAAABJRU5ErkJggg==);
+    background-size:100px 1px;
+}
+
+#stories-section li .upvote{
+    display:none;
+}
+
+#stories-section li .upvoted-true .upvote{
+    display:none;
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding-bottom:15px;
+    opacity:.3;
+}
+
+#stories-section li a{
+    display:block;
+    color:#555;
+    padding:10px 15px;
+}
+
+#stories-section li a:active{
+    background:rgba(0,0,0,.02);
+}
+
+#stories-section .visited{
+    opacity:.5;
+}
+
+#stories-section li .story{
+    margin-right:50px;
+}
+
+#stories-section li .comments{
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:1px;
+    width:50px;
+    padding:12px 0;
+    text-align:center;
+}
+
+#stories-section li .points{
+    position:absolute;
+    bottom:10px;
+    left:0;
+    right:0;
+    background:rgba(0,0,0,.031);
+    padding:3px;
+}
+
+#stories-section li h3{
+    margin:0;
+    font-size:107%;
+    font-weight:400;
+    line-height:1.3;
+    padding-bottom:5px;
+    word-break:break-word;
+}
+
+#stories-section li span{
+    display:inline-block;
+    padding:3px 3px 3px 0;
+    font-weight:300;
+    line-height:1;
+    font-size:.86rem;
+    white-space:pre;
+    opacity:.6;
+}
+
+#stories-section li .url{
+    display:block;
+    padding-left:0;
+    overflow:hidden;
+    white-space:pre;
+    text-overflow:ellipsis;
+}
+
+/*内容展示区域样式*/
+#container-content {
+    height: 100%;
+    margin: -45 0 0 390px;
+}

@@ -2,8 +2,38 @@
 <head>
     <meta charset="UTF-8">
     <title>Hacker News</title>
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    
+    <script type="text/javascript" src="scripts/config.js"></script>
+    <script data-main="scripts/main.js" src="scripts/libs/require.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="header-bg"></div>
+        <!-- stroy类别显示区域 -->
+        <div id="container-stories">
+            <header class="container-header">
+                <ul class="header-menu header-menu-l">
+                    <li>
+                        <a href="#/options">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                </ul>
+                <h1>HN</h1>
+                <ul class="header-menu header-menu-r">
+                    <li><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-ellipsis-v"></i></a></li>
+                </ul>
+            </header>
+            <section id="stories-section">
+                <ul></ul>
+            </section>
+        </div>
+        <!-- 具体内容展示区域 -->
+        <div id="container-content"></div>
+    </div>
 </body>
 </html>

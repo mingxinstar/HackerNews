@@ -1,22 +1,15 @@
 require.config({
     paths : {
-        'backbone'              : 'libs/backbone/backbone',
-        'backbone.localStorage' : 'libs/backbone/localStorage',
+        'Backbone'              : 'libs/Backbone',
         'zepto'                 : 'libs/zepto/zepto',
         'template'              : 'libs/zepto/template',
-        'lazyload'              : 'libs/zepto/lazyload',
         'touch'                 : 'libs/zepto/touch',
         'underscore'            : 'libs/underscore',
-        'text'                  : 'libs/text',
-        'weixin'                : 'libs/weixin',
-        'swal'                  : 'ui/sweetalert/sweetalert'
+        'text'                  : 'libs/text'
     },
     shim : {
-        'backbone' : {
-            exports : 'backbone'
-        },
-        'backbone.localStorage' : {
-            exports : 'backbone.localStorage'
+        'Backbone' : {
+            exports : 'Backbone'
         },
         'zepto' : {
             exports : '$',
@@ -31,8 +24,8 @@ require.config({
     urlArgs : 'v='+CONFIG.version
 });
 
-require(['backbone', 'models/kd', 'routers/workspace'], function (backbone, kd, workspace) {
-    var appRouters = new workspace();
+require(['Backbone', './router'], function (Backbone, router) {
+    var appRouter = new router();
 
-    backbone.history.start();
+    Backbone.history.start();
 })

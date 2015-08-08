@@ -1,0 +1,14 @@
+<% var core = require("core"); %>
+<li id="<%=data.type%>-<%=data._id%>" data-id="<%=data._id%>" data-type="<%=data.type%>">
+    <a href="#/article/<%=data._id%>" class="<%=data.type%>" data-hn="<%=data.type%>">
+        <h3><%=data.title%></h3>
+        <span class="author"><%=data.by%></span>&nbsp; 
+        <span class="time-ago"><%=core.getInterval(data.time)%></span> 
+        <span class="url"><%=data.url%></span>
+    </a>
+    <a href="#/comments/<%=data._id%>" class="comments">
+        <i class="icon bubble-icon"><%=data.descendants%></i>
+        <span class="icon icon-thumbs-up upvote"></span>
+        <span class="points"><%=data.score%></span>
+    </a>
+</li>
