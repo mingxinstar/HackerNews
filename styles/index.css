@@ -77,6 +77,7 @@ body {
 /*通用顶部样式*/
 .container-header {
     position: relative;
+    height: 45px;
 }
 
 .container-header .header-menu {
@@ -111,6 +112,7 @@ body {
     margin: 0 50px;
     color: #FFF;
     color: rgba(255, 255, 255, 0.6);
+    text-align: center;
 }
 
 .container-header .fa {
@@ -144,6 +146,7 @@ body {
 }
 
 #stories-section ul {
+    min-height: 100%;
 }
 
 #stories-section li {
@@ -264,4 +267,175 @@ body {
 #container-content {
     height: 100%;
     margin: -45 0 0 390px;
+}
+
+.article-meta{
+    min-height:120px;
+    padding:10px 15px;
+    border-bottom-width:1px;
+    border-bottom-style:solid;
+    background-color: #4A89DC;
+    background-image:-webkit-linear-gradient(bottom,rgba(255,255,255,.05) 0,rgba(255,255,255,.05) 100%);
+    background-image:-moz-linear-gradient(bottom,rgba(255,255,255,.05) 0,rgba(255,255,255,.05) 100%);
+    background-image:-ms-linear-gradient(bottom,rgba(255,255,255,.05) 0,rgba(255,255,255,.05) 100%);
+    background-image:linear-gradient(bottom,rgba(255,255,255,.05) 0,rgba(255,255,255,.05) 100%);
+}
+
+.article-meta h3{
+    margin:0;
+    padding:0 0 5px;
+    font-size:107%;
+    font-weight:400;
+    color:rgba(255,255,255,.85);
+    line-height:1.3;
+}
+
+.article-meta span{
+    display:inline-block;
+    padding:5px;
+    font-weight:300;
+    line-height:1;
+    font-size:93%;
+    white-space:pre;
+    color:rgba(255,255,255,.5);
+}
+
+.article-meta .fa {
+    margin: 0 5px 0 0;
+}
+
+.article-meta .link{
+    color:rgba(255,255,255,.65);
+}
+
+.article-meta .url{
+    display:block;
+    margin-top:5px;
+    white-space:pre;
+    text-overflow:ellipsis;
+    overflow:hidden;
+}
+
+.article-meta .points{
+    background:rgba(0,0,0,.03);
+    border-radius:3px;
+}
+
+.article-meta .text{
+    padding-top:5px;
+}
+
+.article-meta .icon{
+    padding:2px 5px 2px 0;
+}
+
+.article-meta.article-self-true .article-url{
+    display:none;
+}
+
+.article-meta .self-poll,.article-meta .self-text{
+    margin:10px -15px -9px;
+    padding:10px 15px 5px;
+    background:rgba(255,255,255,.9);
+}
+
+.article-meta .self-text h3{
+    color:inherit;
+}
+
+.article-meta .self-text a{
+    word-break:break-all;
+}
+
+.article-meta .self-text hr{
+    border-top:0;
+    border-bottom:1px solid #888;
+}
+
+.article-meta .self-poll{
+    padding-bottom:15px;
+    margin-top:9px;
+}
+
+.article-meta .self-poll ol{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.article-meta .self-poll li{
+    margin:1px 0;
+}
+
+.article-meta .self-poll em{
+    position:absolute;
+    width:40px;
+    padding-right:5px;
+    text-align:right;
+    font-style:normal;
+    font-weight:300;
+}
+
+.article-meta .self-poll div{
+    display:block;
+    margin-left:40px;
+    padding:0 5px;
+    background-image:-webkit-linear-gradient(to right,rgba(0,0,0,.12),rgba(0,0,0,.06));
+    background-image:linear-gradient(to right,rgba(0,0,0,.12),rgba(0,0,0,.06));
+    background-repeat:no-repeat;
+}
+
+.article-meta .nsfw{
+    padding:3px 5px;
+    background:#ed1c24;
+    color:#fff;
+    border-radius:2px;
+    font-weight:400;
+}
+
+.article-meta .toggle-iama-comments{
+    display:block;
+    background:rgba(0,0,0,.1);
+    margin:10px -15px -9px;
+    padding:10px 15px;
+}
+
+.article-meta .toggle-iama-comments .text{
+    font-weight:400;
+}
+
+.article-meta .toggle-iama-comments .icon{
+    padding:1px;
+    border:1px solid;
+    opacity:.2;
+}
+
+.article-meta .toggle-iama-comments.selected .icon{
+    opacity:1;
+}
+
+.article-meta .self-text img,.article-meta .self-text video{
+    max-width:100%;
+}
+
+.article-meta .pictures{
+    text-align:center;
+}
+
+.article-meta .self-text.open-graph{
+    max-width:500px;
+    padding:5px;
+    margin:10px 0;
+}
+
+.article-meta .open-graph .description{
+    margin-top:10px;
+    padding:0 10px;
+}
+
+.article-meta .open-graph .title{
+    margin:0;
+    padding:10px 10px 0;
+    font-weight:600;
+    line-height:1.6;
 }

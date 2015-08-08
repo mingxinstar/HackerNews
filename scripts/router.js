@@ -19,10 +19,12 @@ define(function (require) {
             require(['views/stories']);
         },
         article : function (article_id) {
-            require();
+            require(['views/article'], function (article) {
+                new article(article_id);    
+            });
         },
         commonts : function () {
-
+            
         }
     });
 
