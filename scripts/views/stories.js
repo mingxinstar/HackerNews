@@ -12,10 +12,16 @@ define(function (require) {
         item = require('views/item');
 
     var storiesView = Backbone.View.extend({
-            ele : '#stories-section',
+            el : '#stories-section',
             collection : stories,
+            events : {
+                'click li' : 'setVisited',
+                'click .load-more' : 'loadMore'
+            },
             initialize : function () {
                 this.$list = this.$('ul');
+
+                console.log('section : ', this.$el);
 
                 this.listenTo(this.collection, 'add', this.addStory);
                 this.listenTo(this.collection, 'reset', this.clear);
@@ -27,6 +33,20 @@ define(function (require) {
             },
             clear : function () {
                 console.log('clear');
+            },
+            /**
+             * 设置为已读信息
+             * @param {[type]} e [description]
+             */
+            setVisited : function (e) {
+                var $this = $(e.currentTarget);
+
+                console.log('set visited : ', $this);
+
+                $this.addClass('visited');
+            },
+            loadMore : function (e) {
+                this.collection.loadMore();
             }
         });
 

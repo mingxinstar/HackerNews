@@ -44,14 +44,22 @@ define(function (require) {
         },
         /**
          * 加载更多数据
-         * @return {[type]} [description]
+         * @return {Boolean} 是否有更多数据可以加载
          */
         loadMore : function () {
-            for (var i = this.index; i < this.countPerPage; i++) {
-                this.add(new this.model(this.stories[i]));
+            var maxCount = this.stories.length,
+                currRoundMax = this.countPerPage + this.index;
+
+            if (this.index > maxCount-1) {
+                return false;
             }
 
-            this.index += this.countPerPage;
+            for (var i = this.index; i < currRoundMax && i < maxCount; i++) {
+                this.add(new this.model(this.stories[this.index]));
+                this.index++;
+            }
+
+            return true;
         }
     });
 

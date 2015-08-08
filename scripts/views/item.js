@@ -12,19 +12,21 @@ define(function (require) {
         itemTmpl = require('text!templates/item.html');
 
     var item = Backbone.View.extend({
-            tagName : 'li',
+            // tagName : 'li',
             initialize : function () {
                 this.listenTo(this.model, 'change', this.render);
             },
             render : function () {
                 console.log('render : ', this.model.toJSON());
 
-                this.$el.html(template(itemTmpl, {data : this.model.toJSON()}));
+                this.setElement(template(itemTmpl, {data : this.model.toJSON()}));
+
+                // this.$el.html(template(itemTmpl, {data : this.model.toJSON()}));
 
                 $('#stories-section ul').append(this.$el);
 
                 return this;
-            }
+            },
         });
 
     return item;

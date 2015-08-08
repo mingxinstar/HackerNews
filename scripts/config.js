@@ -6,5 +6,5 @@ var CONFIG = {
     root : {
         api : 'hacker-news.firebaseio.com/v0'
     },
-    version : 0.0
+    version : 0.1
 };

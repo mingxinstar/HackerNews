@@ -144,7 +144,6 @@ body {
 }
 
 #stories-section ul {
-    
 }
 
 #stories-section li {
@@ -221,6 +220,7 @@ body {
     padding:3px 3px 3px 0;
     font-weight:300;
     line-height:1;
+    font-size: .86em;
     font-size:.86rem;
     white-space:pre;
     opacity:.6;
@@ -232,6 +232,32 @@ body {
     overflow:hidden;
     white-space:pre;
     text-overflow:ellipsis;
+}
+
+#stories-section li .fa-comment {
+    position: relative;
+    color: #E6F2FF;
+}
+
+#stories-section li .fa-comment span {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    color: #007AFF;
+}
+
+#stories-section .load-more {
+    margin: 0 0 100px 0;
+}
+
+#stories-section .load-more a {
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 400;
+    background-color: #E2E3E6;
+    background-color: rgba(0,0,0,0.1);
 }
 
 /*内容展示区域样式*/

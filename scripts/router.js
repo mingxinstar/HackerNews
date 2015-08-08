@@ -18,8 +18,8 @@ define(function (require) {
         index : function () {
             require(['views/stories']);
         },
-        article : function () {
-            
+        article : function (article_id) {
+            require();
         },
         commonts : function () {
 
