@@ -1,6 +1,6 @@
 require.config({
     paths : {
-        'Backbone'              : 'libs/Backbone',
+        'Backbone'              : 'libs/backbone',
         'zepto'                 : 'libs/zepto/zepto',
         'template'              : 'libs/zepto/template',
         'touch'                 : 'libs/zepto/touch',
