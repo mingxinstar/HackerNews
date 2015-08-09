@@ -10,22 +10,22 @@ define(function (require) {
 
         core = require('core');
 
-    var story = Backbone.Model.extend({
-        url : '/item/{story_id}.json',
-        initialize : function (story_id) {
+    var item = Backbone.Model.extend({
+        url : '/item/{item_id}.json',
+        initialize : function (item_id) {
             this.set({
-                'story_id' : story_id
+                'item_id' : item_id
             });
 
             this.fetch({
                 url : this.url,
                 data : {
-                    story_id : story_id
+                    item_id : item_id
                 }
             })
         },
         sync : core.sync
     });
 
-    return story;
+    return item;
 });

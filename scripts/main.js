@@ -24,7 +24,7 @@ require.config({
     urlArgs : 'v='+CONFIG.version
 });
 
-require(['Backbone', './router'], function (Backbone, router) {
+require(['Backbone', 'zepto', './router'], function (Backbone, zepto, router) {
     var appRouter = new router();
 
     Backbone.history.start();

@@ -1,0 +1,17 @@
+<% var core = require("core"); %>
+<li id="comment-<%=data.id%>">
+    <div class="comment" id="item-<%=data.id%>">
+        <div class="comment-meta">
+            <span class="author ">
+                <i class="fa fa-user"></i>
+                <span class="text"> <%=data.by%></span>
+            </span>
+            <span class="time-ago">
+                <i class="fa fa-clock-o"></i>
+                <span class="text"> <%=core.getInterval(data.time)%></span>
+            </span>
+        </div>
+        <div class="comment-text"><%=data.text%></div>
+    </div>
+    <ul id="kids-<%=data.id%>"></ul>
+</li>

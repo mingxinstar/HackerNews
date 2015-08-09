@@ -9,11 +9,11 @@ define(function (require) {
     var Backbone = require('Backbone'),
 
         core = require('core'),
-        story = require('models/story');
+        item = require('models/item');
 
     var stories = Backbone.Collection.extend({
         url : '/{type}stories.json', //type值为[news, top, ask, shwo, job]
-        model : story,
+        model : item,
         type : 'top', //当前story类型
         stories : [], //当前的stroy id 列表
         index : 0, //当前story索引值

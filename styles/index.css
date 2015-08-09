@@ -311,6 +311,7 @@ body {
     overflow-x: hidden;
 }
 
+/*顶部meta样式*/
 .article-meta{
     min-height:120px;
     padding:10px 15px;
@@ -487,13 +488,14 @@ body {
     min-height:60%;
 }
 
-.article-content .article-loading {
+/*article内容区域样式*/
+.article-loading {
     height: 45px;
     line-height: 45px;
     text-align: center;
 }
 
-.article-content .article-loading i {
+.article-loading i {
     margin: 0 5px 0 0;
     vertical-align: middle;
 }
@@ -541,4 +543,103 @@ body {
 .article-content figcaption{
     font-size:.93rem;
     opacity:.5;
+}
+
+/*评论区域样式*/
+.article-comments {
+    margin-top:-1px;
+    overflow:hidden;
+    min-height:60%;
+}
+
+.article-comments .fa {
+    vertical-align: middle;
+}
+
+.article-comments .time-ago{
+    display:inline-block;
+    padding:7px 5px 10px;
+}
+
+.article-comments .author{
+    display:inline-block;
+    padding:7px 10px 10px;
+    color: #007AFF;
+}
+
+.article-comments .vote{
+    padding:7px 10px 10px;
+    opacity:1;
+}
+
+.article-comments .icon{
+    padding:8px 0 8px 5px;
+    opacity:.6;
+    vertical-align:middle;
+    font-size:85%;
+}
+
+.article-comments .text{
+    padding:5px 5px 5px 0;
+    vertical-align:middle;
+    line-height:1;
+}
+
+.article-comments .op .text{
+    padding-left:5px;
+    margin-left:5px;
+    color:#fff;
+}
+
+.article-comments time{
+    color:#888;
+}
+
+.article-comments ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.article-comments li{
+    border-top:1px solid rgba(0,0,0,.05);
+}
+
+.article-comments ul ul{
+    border-left:14px solid rgba(0,0,0,.05);
+    margin-left:1px;
+}
+
+.article-comments .comment-text{
+    padding:10px 15px;
+    margin:-10px 0 0;
+    line-height:1.5;
+}
+
+.article-comments .comment-meta{
+    cursor:pointer;
+}
+
+.article-comments .hide-children .text{
+    font-weight:300;
+}
+
+.article-comments .hide-children .comments-count{
+    display:inline-block;
+    padding:0 5px;
+    line-height:1;
+    vertical-align:middle;
+}
+
+.article-comments .comment a{
+    -ms-word-break:break-all;
+    word-break:break-all;
+    word-break:break-word;
+    -webkit-hyphens:auto;
+    -moz-hyphens:auto;
+    hyphens:auto;
+}
+
+.article-comments .comment p{
+    margin:10px 0;
 }

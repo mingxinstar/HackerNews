@@ -7,7 +7,10 @@
  */
 
 define(function (require) {
-    var Backbone = require('Backbone');
+    var Backbone = require('Backbone'),
+
+        article = require('views/article'),
+        comments = require('views/comments');
 
     var router = Backbone.Router.extend({
         routes : {
@@ -22,15 +25,11 @@ define(function (require) {
         },
         currArticle : null,
         article : function (article_id) {
-            var that = this;
-
-            require(['views/article'], function (article) {
-                that.currArticle = new article(article_id);    
-            });
+            this.currArticle = new article(article_id);    
         },
         currComment : null,
-        commonts : function () {
-            
+        commonts : function (article_id) {
+            this.currComment = new comments(article_id);
         },
         reset : function () {
             if (this.currArticle) {
