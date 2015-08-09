@@ -9,6 +9,7 @@
 define(function (require) {
     var Backbone = require('Backbone'),
 
+        stories = require('views/stories'),
         article = require('views/article'),
         comments = require('views/comments'),
         options = require('views/options');
@@ -23,7 +24,7 @@ define(function (require) {
         index : function () {
             this.reset();
 
-            require(['views/stories']);
+            // require(['views/stories']);
         },
         currArticle : null,
         article : function (article_id) {

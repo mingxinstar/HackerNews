@@ -20,8 +20,17 @@ define(function (require) {
         initialize : function (article_id) {
             this.$container = $('#container-content');
 
-            this.model = stories.get(article_id);
+            this.model = stories.get(article_id) ;
 
+            if (!this.model) {
+                this.model = new item(article_id);
+
+                this.listenTo(this.model, 'change', this.initComments)
+            } else {
+                this.initComments();
+            }
+        },
+        initComments : function () {
             this.render();
 
             _.each(this.model.get('kids') || [], function (value) {

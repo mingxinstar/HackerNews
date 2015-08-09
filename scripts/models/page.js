@@ -11,7 +11,7 @@ define(function (require) {
         core = require('core');
 
     var page = Backbone.Model.extend({
-        url : 'http://aws-api.premii.com/readability.php?url={url}&id={id}&apikey=hn.premii.com&d=20150710',
+        url : 'http://aws-api.premii.com/readability.php?id={id}&apikey=hn.premii.com&d=20150710&url={url}',
         initialize : function (id, url) {
             this.set({
                 id : id,

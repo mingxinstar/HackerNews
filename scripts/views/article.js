@@ -9,6 +9,7 @@ define(function (require) {
     var Backbone = require('Backbone'),
         template = require('template'),
 
+        item = require('models/item'),
         stories = require('collections/stories'),
         page = require('models/page'),
         pages = require('collections/pages'),
@@ -19,8 +20,17 @@ define(function (require) {
         initialize : function (article_id) {
             this.$container = $('#container-content');
 
-            this.model = stories.get(article_id);
+            this.model = stories.get(article_id) ;
 
+            if (!this.model) {
+                this.model = new item(article_id);
+
+                this.listenTo(this.model, 'change', this.initPage)
+            } else {
+                this.initPage();
+            }
+        },
+        initPage : function () {
             this.render();
 
             var modelJSON = this.model.toJSON();

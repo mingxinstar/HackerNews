@@ -8,6 +8,7 @@
 define(function (require) {
     var Backbone = require('Backbone'),
 
+        storage = require('storage'),
         stories = require('collections/stories'),
         item = require('views/item');
 
@@ -21,8 +22,6 @@ define(function (require) {
             initialize : function () {
                 this.$list = this.$('ul');
                 this.$loadMore = this.$('.load-more');
-
-                console.log('section : ', this.$el);
 
                 this.listenTo(this.collection, 'add', this.addStory);
                 this.listenTo(this.collection, 'reset', this.reset);
@@ -44,6 +43,8 @@ define(function (require) {
                 console.log('set visited : ', $this);
 
                 $this.addClass('visited');
+
+                storage.visited($this.data('id'));
             },
             loadMore : function (e) {
                 if (this.collection.loadMore()) {

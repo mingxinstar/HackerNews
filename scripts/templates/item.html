@@ -1,5 +1,5 @@
-<% var core = require("core"); %>
-<li id="<%=data.type%>-<%=data.id%>" data-id="<%=data.id%>" data-type="<%=data.type%>">
+<% var core = require("core"), storage = require("storage"); %>
+<li id="<%=data.type%>-<%=data.id%>" class="<%=storage.isVisited(data.id) ? "visited" : ""%>" data-id="<%=data.id%>" data-type="<%=data.type%>">
     <a href="#/article/<%=data.id%>" class="story" data-hn="<%=data.type%>">
         <h3><%=data.title%></h3>
         <span class="author"><%=data.by%></span>&nbsp; 
