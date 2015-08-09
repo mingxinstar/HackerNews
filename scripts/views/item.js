@@ -21,9 +21,8 @@ define(function (require) {
 
                 this.setElement(template(itemTmpl, {data : this.model.toJSON()}));
 
-                // this.$el.html(template(itemTmpl, {data : this.model.toJSON()}));
-
                 $('#stories-section ul').append(this.$el);
+                $('#stories-section .fa-spinner').hide();
 
                 return this;
             },

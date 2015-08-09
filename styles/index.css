@@ -157,6 +157,13 @@ body {
     overflow-y: auto;
 }
 
+#stories-section .fa-spinner {
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    margin: 0 0 0 -15px;
+}
+
 #stories-section ul {
     min-height: 100%;
 }

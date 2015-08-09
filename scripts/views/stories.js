@@ -31,6 +31,7 @@ define(function (require) {
             },
             reset : function (type) {
                 this.$list.html('');
+                this.$('.fa-spinner').show();
                 $('#container-stories .container-header h1').text(type);
             },
             /**
