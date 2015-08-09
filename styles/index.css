@@ -265,8 +265,19 @@ body {
 
 /*内容展示区域样式*/
 #container-content {
+    position: relative;
     height: 100%;
     margin: -45 0 0 390px;
+}
+
+#content-section {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .article-meta{
@@ -438,4 +449,65 @@ body {
     padding:10px 10px 0;
     font-weight:600;
     line-height:1.6;
+}
+
+.article-content {
+    padding:10px 15px;
+    min-height:60%;
+}
+
+.article-content .article-loading {
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+
+.article-content .article-loading i {
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+}
+
+.article-content h1,.article-content h2,.article-content h3{
+    font-weight:400;
+}
+
+.article-content img{
+    max-width:100%;
+    display:block;
+    margin:0 auto;
+    padding:4px;
+}
+
+.article-content blockquote{
+    margin:5px 0;
+    padding:1px 0 1px 15px;
+    border-left:4px solid rgba(0,0,0,.1);
+    background:rgba(0,0,0,.05);
+}
+
+.article-content pre{
+    font-size:79%;
+}
+
+.article-content table{
+    border:2px solid #bbb;
+}
+
+.article-content td{
+    padding:3px 5px;
+    border-color:#ddd;
+}
+
+.article-content tr:nth-child(2n){
+    background:#f9f9f9;
+}
+
+.article-content th{
+    padding:3px 5px;
+    background:#eee;
+}
+
+.article-content figcaption{
+    font-size:.93rem;
+    opacity:.5;
 }

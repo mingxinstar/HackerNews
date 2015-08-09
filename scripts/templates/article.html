@@ -9,5 +9,13 @@
     <a class="url link hn-url" href="https://news.ycombinator.com/item?id=<%=data.id%>" target="_blank"><i class="fa fa-external-link"></i>news.ycombinator.com/item?id=<%=data.id%></a>
 </div>
 <div class="article-content">
-    <%=data.text || "No Content~"%>
+    <% if (data.text) { %>
+        <%=data.text%>
+    <% } else if (data.url) { %>
+        <div class="article-loading">
+            <i class="fa fa-spinner fa-spin fa-2x"></i>loading...
+        </div>
+    <% } else { %>
+        No Content
+    <% } %>
 </div>
