@@ -1,0 +1,15 @@
+<% var core = require("core"), storage = require("storage"); %>
+<li id="<%=data.type%>-<%=data.id%>" class="<%=storage.isVisited(data.id) ? "visited" : ""%>" data-id="<%=data.id%>" data-type="<%=data.type%>">
+    <a href="#/article/<%=data.id%>" class="story" data-hn="<%=data.type%>">
+        <h3><%=data.title%></h3>
+        <span class="author"><%=data.by%></span>&nbsp; 
+        <span class="time-ago"><%=core.getInterval(data.time)%></span> 
+        <span class="url"><%=data.url%></span>
+    </a>
+    <a href="#/comments/<%=data.id%>" class="comments">
+        <i class="fa fa-comment fa-2x">
+            <span><%=data.descendants%></span>
+        </i>
+        <span class="points"><%=data.score%></span>
+    </a>
+</li>

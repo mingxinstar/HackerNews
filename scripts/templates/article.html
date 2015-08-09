@@ -1,0 +1,21 @@
+<% var core = require("core"); %>
+<div class="article-meta">
+    <h3 class="title"><%=data.title%></h3>
+    <span class="points"><%=data.score%></span>
+    <span class="author"><%=data.by%></span>
+    <span class="time-ago"><%=core.getInterval(data.time)%></span> 
+    <span class="comments-count"><i class="fa fa-comment"></i><%=data.descendants%></span>
+    <a class="url link article-url" href="<%=data.url%>" target="_blank"><i class="fa fa-external-link"></i><%=data.url%></a>
+    <a class="url link hn-url" href="https://news.ycombinator.com/item?id=<%=data.id%>" target="_blank"><i class="fa fa-external-link"></i>news.ycombinator.com/item?id=<%=data.id%></a>
+</div>
+<div class="article-content">
+    <% if (data.text) { %>
+        <%=data.text%>
+    <% } else if (data.url) { %>
+        <div class="article-loading">
+            <i class="fa fa-spinner fa-spin fa-2x"></i>loading...
+        </div>
+    <% } else { %>
+        No Content
+    <% } %>
+</div>
