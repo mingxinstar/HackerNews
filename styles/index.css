@@ -65,7 +65,7 @@ body {
 }
 
 .container {
-    
+    position: relative;
 }
 
 /*顶部导航栏底色*/
@@ -133,6 +133,16 @@ body {
     width: 390px;
     height: 100%;
     margin: -45px 0 0 0;
+}
+
+@media only screen and (max-width: 768px) {
+    #container-stories {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+    }
 }
 
 /*story侧栏列表展示区域样式*/
@@ -268,6 +278,27 @@ body {
     position: relative;
     height: 100%;
     margin: -45 0 0 390px;
+    background-color: #FFF;
+}
+
+@media only screen and (max-width: 768px) {
+    #container-content {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        margin: 0;
+        -webkit-transition: left 0.5s ease;
+        -o-transition: left 0.5s ease;
+        transition: left 0.5s ease;
+    }
+    #container-content.content-show {
+        left: 0;
+    }
+}
+
+#container-content header {
+    background-color: #4A89DC;
 }
 
 #content-section {

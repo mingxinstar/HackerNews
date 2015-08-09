@@ -16,15 +16,30 @@ define(function (require) {
             'comments/:comment_id' : 'commonts', //评论
         },
         index : function () {
+            this.reset();
+
             require(['views/stories']);
         },
+        currArticle : null,
         article : function (article_id) {
+            var that = this;
+
             require(['views/article'], function (article) {
-                new article(article_id);    
+                that.currArticle = new article(article_id);    
             });
         },
+        currComment : null,
         commonts : function () {
             
+        },
+        reset : function () {
+            if (this.currArticle) {
+                this.currArticle.destroy();
+            }
+
+            if (this.currComment) {
+                this.currComment.destroy();
+            }
         }
     });
 
