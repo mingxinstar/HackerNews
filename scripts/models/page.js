@@ -10,7 +10,7 @@ define(function (require) {
 
         core = require('core');
 
-    var readPage = Backbone.Model.extend({
+    var page = Backbone.Model.extend({
         url : 'http://aws-api.premii.com/readability.php?url={url}&id={id}&apikey=hn.premii.com&d=20150710',
         initialize : function (id, url) {
             this.set({
@@ -30,5 +30,5 @@ define(function (require) {
         sync : core.sync
     });
 
-    return readPage;
+    return page;
 });

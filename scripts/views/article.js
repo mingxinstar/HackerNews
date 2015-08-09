@@ -10,7 +10,8 @@ define(function (require) {
         template = require('template'),
 
         stories = require('collections/stories'),
-        page = require('models/readPage'),
+        page = require('models/page'),
+        pages = require('collections/pages'),
         articleTmpl = require('text!templates/article.html');
 
     var article = Backbone.View.extend({
@@ -25,9 +26,21 @@ define(function (require) {
             var modelJSON = this.model.toJSON();
 
             if (this.model.get('url') && !this.model.get('text')) {
-                this.pageModel = new page(this.model.get('id'), this.model.get('url'));
+                var currPage = pages.get(this.model.get('id'));
 
-                this.listenTo(this.pageModel, 'change', this.renderPage);
+                if (currPage) {
+                    this.pageModel = currPage;
+
+                    this.renderPage();
+                } else {
+                    currPage = new page(this.model.get('id'), this.model.get('url'));
+
+                    pages.add(currPage);
+
+                    this.pageModel = currPage;
+
+                    this.listenTo(this.pageModel, 'change', this.renderPage);
+                }
             }
         },
         render : function () {
