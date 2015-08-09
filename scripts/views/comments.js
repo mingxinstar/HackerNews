@@ -18,6 +18,8 @@ define(function (require) {
     var comments = Backbone.View.extend({
         el : '#content-section',
         initialize : function (article_id) {
+            this.$container = $('#container-content');
+
             this.model = stories.get(article_id);
 
             this.render();
@@ -29,14 +31,18 @@ define(function (require) {
             });
         },
         render : function () {
-            $('#container-content').addClass('content-show');
+            this.$container.addClass('content-show');
+            this.$container.find('.menu-item-comment').hide();
+            this.$container
+                .find('.menu-item-article').css('display', 'inline-block')
+                .find('a').attr('href', '#/article/'+this.model.get('id'));
 
             this.$el.html(template(commentsTmpl, {data : this.model.toJSON()}));
 
             return this;
         },
         destroy : function () {
-            $('#container-content').removeClass('content-show');
+            this.$container.removeClass('content-show');
 
             this.$el.html('');
         }

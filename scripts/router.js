@@ -10,13 +10,15 @@ define(function (require) {
     var Backbone = require('Backbone'),
 
         article = require('views/article'),
-        comments = require('views/comments');
+        comments = require('views/comments'),
+        options = require('views/options');
 
     var router = Backbone.Router.extend({
         routes : {
             '' : 'index', //首页
             'article/:article_id' : 'article', //文章
             'comments/:comment_id' : 'commonts', //评论
+            'options' : 'options' //设置
         },
         index : function () {
             this.reset();
@@ -39,6 +41,11 @@ define(function (require) {
             if (this.currComment) {
                 this.currComment.destroy();
             }
+
+            options.destroy();
+        },
+        options : function () {
+            options.render();
         }
     });
 

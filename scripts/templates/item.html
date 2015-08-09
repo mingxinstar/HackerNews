@@ -1,6 +1,6 @@
 <% var core = require("core"); %>
 <li id="<%=data.type%>-<%=data.id%>" data-id="<%=data.id%>" data-type="<%=data.type%>">
-    <a href="#/article/<%=data.id%>" class="<%=data.type%>" data-hn="<%=data.type%>">
+    <a href="#/article/<%=data.id%>" class="story" data-hn="<%=data.type%>">
         <h3><%=data.title%></h3>
         <span class="author"><%=data.by%></span>&nbsp; 
         <span class="time-ago"><%=core.getInterval(data.time)%></span> 

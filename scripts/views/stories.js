@@ -20,19 +20,19 @@ define(function (require) {
             },
             initialize : function () {
                 this.$list = this.$('ul');
+                this.$loadMore = this.$('.load-more');
 
                 console.log('section : ', this.$el);
 
                 this.listenTo(this.collection, 'add', this.addStory);
-                this.listenTo(this.collection, 'reset', this.clear);
+                this.listenTo(this.collection, 'reset', this.reset);
             },
             addStory : function (model) {
                 new item({model : model});
-
-                // console.log('addStory : ', model.toJSON());
             },
-            clear : function () {
-                console.log('clear');
+            reset : function (type) {
+                this.$list.html('');
+                $('#container-stories .container-header h1').text(type);
             },
             /**
              * 设置为已读信息
@@ -46,7 +46,11 @@ define(function (require) {
                 $this.addClass('visited');
             },
             loadMore : function (e) {
-                this.collection.loadMore();
+                if (this.collection.loadMore()) {
+                    this.$loadMore.show();
+                } else {
+                    this.$loadMore.hide();
+                }
             }
         });
 

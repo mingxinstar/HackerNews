@@ -12,7 +12,7 @@ define(function (require) {
         item = require('models/item');
 
     var stories = Backbone.Collection.extend({
-        url : '/{type}stories.json', //type值为[news, top, ask, shwo, job]
+        url : '/{type}stories.json', //type值为[new, top, ask, show, job]
         model : item,
         type : 'top', //当前story类型
         stories : [], //当前的stroy id 列表
@@ -28,6 +28,8 @@ define(function (require) {
                 this.type = type;
                 this.stories = [];
                 this.index = 0;
+
+                this.trigger('reset', type);
             }
 
             var that = this;
@@ -50,16 +52,12 @@ define(function (require) {
             var maxCount = this.stories.length,
                 currRoundMax = this.countPerPage + this.index;
 
-            if (this.index > maxCount-1) {
-                return false;
-            }
-
             for (var i = this.index; i < currRoundMax && i < maxCount; i++) {
                 this.add(new this.model(this.stories[this.index]));
                 this.index++;
             }
 
-            return true;
+            return this.index < maxCount-1;
         }
     });
 
